@@ -2,15 +2,5 @@ language: python
 python:
   - "2.7"
   - "3.5"
-services:
-  - docker
 
-virtualenv:
-  system_site_packages: true
-
-script:
-
-  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-  - docker build -t chengshizero/chengshizero-info:latest .
-  - docker push chengshizero/chengshizero-info:latest
 
