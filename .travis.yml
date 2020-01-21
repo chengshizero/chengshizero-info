@@ -1,12 +1,14 @@
 language: python
-sudo: required
-install: pip install flask
-script: python test.py
 
 services:
   - docker
-script:
 
+install:
+  - docker build -t pyas .
+  - docker run -d -p 127.0.0.1:80:80 --name blog blog
+
+script:
+  - python test.py 
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
   - docker build -t chengshizero/chengshizero-info:latest .
   - docker push chengshizero/chengshizero-info:latest
