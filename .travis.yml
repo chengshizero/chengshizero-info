@@ -1,4 +1,4 @@
 language: python
 sudo: required
-before_install: pip install foo
+install: pip install foo
 script: py.test
