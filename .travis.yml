@@ -1,4 +1,4 @@
 language: python
 sudo: required
-install: pip install foo
+install: pip install flask
 script: py.test
