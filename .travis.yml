@@ -2,3 +2,12 @@ language: python
 sudo: required
 install: pip install flask
 script: python test.py
+
+services:
+  - docker
+script:
+
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+  - docker build -t pea3nut/pea3nut-info:latest .
+  - docker push pea3nut/pea3nut-info:latest
+
