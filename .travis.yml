@@ -1,6 +1,4 @@
 language: python
-python:
-  - "2.7"
-  - "3.5"
-
-
+sudo: required
+before_install: sudo pip install foo
+script: py.test
